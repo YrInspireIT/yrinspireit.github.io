@@ -2,173 +2,399 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Log In For Full Access | Your Inspire IT </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Main Site | Your Inspire IT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Megrim&family=Share:ital,wght@0,400;0,700;1,400;1,700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+ <link rel="icon" href="https://i.postimg.cc/ZRc76Fqb/In-Shot-20241024-202136364.png" type="image/png">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('https://i.postimg.cc/sx0XBJHz/b.jpg');
-            background-size: cover;
-            background-position: fixed;
-            text-align: center;
-            margin-top: 100px;
-        }
-        
-        form {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-        
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+            font-family: "Sora", sans-serif;
+            
         }
         
-        button {
-            background-color: #007bff;
+        body{
+            background: #000;
+        }
+       .log {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+          
             color: #fff;
-            padding: 10px 20px;
+            overflow: hidden;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            transform: rotateX(-5deg) rotateY(-5deg);
+            animation: float 6s infinite alternate ease-in-out;
+            perspective: 1000px;
+            position: relative;
+        }
+        @keyframes float {
+            0% { transform: translateY(-8px) rotateX(-5deg) rotateY(-5deg); }
+            100% { transform: translateY(8px) rotateX(5deg) rotateY(5deg); }
+        }
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #76ff03;
+            text-shadow: 0 0 10px #76ff03;
+            animation: textAnimate 1s ease-in-out;
+        }
+        @keyframes textAnimate {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.2);
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
+            outline: none;
+            color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+        .form-group input:focus {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
+        }
+        .form-group label {
+            position: absolute;
+            top: 50%;
+            left: 45px;
+            transform: translateY(-50%);
+            font-size: 0.9em;
+            color: #aaa;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+            top: -4px;
+            left: 45px;
+            color: #76ff03;
+            font-size: 0.8em;
+        }
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+            color: #76ff03;
+        }
+        .show-hide {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
             cursor: pointer;
+            color: #76ff03;
+            transition: transform 0.3s;
+        }
+        .show-hide:hover {
+            transform: scale(1.1);
+        }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1e1e1e;
+            background: linear-gradient(145deg, #76ff03, #64dd17);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(118, 255, 3, 0.4);
+            transition: background 0.3s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:hover {
+            background: #64dd17;
+            transform: translateY(-2px);
+        }
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.4s ease;
+        }
+        .btn:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .footer-text {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+        .footer-text a {
+            color: #76ff03;
+            text-decoration: none;
+        }
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: "Megrim", serif;
         }
         
-        button:hover {
-            background-color: #0056b3;
-        }
-        
-        h1 {
-            margin-top: 50px;
-            color: white;
-        }
-        
-        b {
-            color: #007bff;
-        }
-        
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
-            }
-            50% {
-                text-shadow: 0 0 20px #007bff, 0 0 30px #007bff;
-            }
-            100% {
-                text-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
-            }
-        }
-        
-        b {
-            animation: glow 1.5s infinite alternate;
-        }
-        
-        img{
-            height: 200px;
-            width: 200px;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }
-        
-        
-       .note{
-           margin: 0 auto;
-           width: 70%;
-           
+       .logo h2{
+       font-family: "Megrim", serif;
        }
        
-      .note p{
-          color: #fff;
-          background:#0000008a;
-          padding: 10px;
-          border-radius: 5px;
-      }
-      
-      
-      
-     .part1{
-         margin: 0 auto;
-         width: 70%;
+     .head{
+         margin: 30px 5% 0 5%;
+         background: transparent;
      }
-     
-     
-     
-     
-         .alert {
-      padding: 20px;
-      background-color: #ff1f00;
-      color: white;
-      font-size: 20px;
-      margin-bottom: 15px;
-      border-radius: 10px;
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-      width: calc(100% - 40px);
-      max-width: 500px;
-      box-shadow: 0 0 20px #ff1f00 , 0 0 40px #ff1f00  ;
-      text-align: center;
+    .ll{
+        display: flex;
+        align-items: center;
     }
+    
+   .ll img {
+       width: 200px;
+       height : auto;
+       margin-right: auto;
+       margin-left: auto;
+       display: block;
+     filter: drop-shadow(0 0 40px #3bff00);
+   }
+   
+ 
+ 
+ 
+ .sl {
+    margin: 30px 5% 40px 5%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    font-family: Arial, sans-serif;
+   
+    color: #f1f1f1;
+  }
+  .alert-container {
+    text-align: center;
+    background: #2c2f33;
+    padding: 40px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: slideDown 0.7s ease-out;
+  }
+  .alert-container i {
+    font-size: 50px;
+    color: #ff5555;
+    animation: pulse 1.5s infinite;
+  }
+  .alert-container h3 {
+    font-size: 24px;
+    color: #ff5555;
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+  }
+  .alert-container p {
+    font-size: 16px;
+    color: #e1e1e1;
+    margin: 0 0 20px;
+  }
+  .alert-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #4CAF50;
+    color: #fff;
+    transition: background 0.3s;
+  }
+  .alert-container button:hover {
+    background: #45a049;
+  }
+  @keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
+  
+ .nn{
+     margin: 30px 5% 0 5%;
+ }
+ .nh h1{
+     color: #3bff00;
+     font-size: 40px;
+     text-shadow: 0 0 30px #3bff00;
+     margin-bottom: 20px;
+ }
+ 
+.nc{
+    margin: 20px 5% 0 20px;
+    color: #000;
+    font-size: 20px;
+    background: #00ffff;
+    padding: 30px;
+    border-radius: 0 10px 0 10px;
+}
 
-    .closebtn {
-      margin-left: 15px;
-      color: white;      
-      font-weight: bold;
-      float: right;
-      font-size: 22px;
-      line-height: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .closebtn:hover {
-      color: black;
-    }
+.nc span{
+    
+    font-size: 25px;
+    color: #002dff;
+}
     </style>
 </head>
 <body>
-    <a href="#"><img src="https://i.postimg.cc/nVvDBPP5/Yi-logo.png"></a>
+  <div class="head">
+      <div class="ll">
+          <img src="https://i.postimg.cc/ZRc76Fqb/In-Shot-20241024-202136364.png" alt="">
+          </div>
+  </div>
+  
+  
+  <section class="nn">
+      <div class="nh">
+          <h1><i class="fa fa-bullhorn" aria-hidden="true"></i> Announcement<br><hr></h1>
+      </div>
+      
+      <div class="nc">
+          <span><i class="fa fa-info-circle" aria-hidden="true"></i></span> Pay-YourInspireIT সহো আমাদের সকল Website এর আপগ্রেডশন চলছে ।  সকল সিস্টেম এবং ফাংশন সঠিক ভাবে কাজ নাও করতে পারে । শীগ্রই আপডেট শেষ হয়ে যাবে । তবে Withdraw এবং Active Account এর সকল সিস্টেম ভালোভাবে কাজ করবে, এতে কোনো সমস্যা হবে না । ধন্যবাদ :)
+      </div>
+  </section><br><br>
+
+        
+        <section class="log">
+    <div class="login-container">
+        <div class="logo">
+            <h2 class="l">Your Inspire IT</h2> <!-- Replace with actual logo -->
+        </div>
+        <h2>Log In</h2>
+        <div class="form-group">
+            <span class="icon"><i class="fas fa-user"></i></span>
+            <input type="text" required placeholder=" " id="username">
+            <label for="username">Username</label>
+        </div>
+        
+          <div class="form-group">
+            <span class="icon"><i class="fas fa-user"></i></span>
+            <input type="text" required placeholder=" " id="username">
+            <label for="username">Number</label>
+        </div>
+        <div class="form-group">
+            <span class="icon"><i class="fas fa-lock"></i></span>
+            <input type="password" required placeholder=" " id="password">
+            <label for="password">Password</label>
+            <span class="show-hide" onclick="togglePassword()"><i class="fas fa-eye" id="eyeIcon"></i></span>
+        </div>
+        
+        
+        <div class="form-group">
+            <span class="icon"><i class="fas fa-lock"></i></span>
+            <input type="password" required placeholder=" " id="password">
+            <label for="password">Pass Key</label>
+            <span class="show-hide" onclick="togglePassword()"><i class="fas fa-eye" id="eyeIcon"></i></span>
+        </div>
+        
+        
+        <button class="btn" onclick="login()"> Access </button>
+        <div class="footer-text">
+            Don’t have an account? <a href="#">Sign up!</a>
+        </div>
+        <div class="footer-text" id="message" style="color: #ff001f; display: none; text-shadow: 0 0 20px #ff001f;"></div>
+        <div class="footer-text">
+            &copy; 2022-2024 Your Inspire IT. All rights reserved.
+        </div>
+        
+        </section>
+    </div>
     
-    <br><br>
-    <form action="#" method="post" onsubmit="return false;">
-        <input type="text" placeholder="User ID">
-        <br>
-        <input type="password" placeholder="Password">
-        <br>
-        <input type="text" placeholder="Passkey">
-        <br>
-        <input type="text" placeholder="Referral ID"><br>
-        <button onclick="showPopup()">Log In</button>
-    </form>
-   <div class="part1">
-
-</div>
-<div class="note">
-    <p style="color: #11ff00;">এই ওয়েবসাইটের ফুল এক্সেস পেতে আপনার এক্টিভ করা একাউন্ট দিয়ে লগইন করুন ! আর আপনার যদি এক্টিভ করা একাউন্ট না থাকে তাহলে রেফারাল টিমের মাধ্যমে একাউন্ট খুলে একাউন্টটি এক্টিভ করে পুনরায় লগইন করার চেষ্টা করুন ! </p>
+    
+    <section class="sl">
+<div class="alert-container">
+  <i class="fas fa-exclamation-triangle"></i>
+  <h3>Alert</h3>
+  <p>Main Site এ শুধুমাত্র এডমিন প্যানেল, রেফারাল মেম্বার, এক্টিভ ইউজার লগিং করতে পারবে ।  এ ছাড়া আর কাউকে লগিং করার অনুমতি দেওয়া হয়নি । আপনি যদি আমাদের সাথে কাজ করতে চান, একজন রেফারাল মেম্বারের কাছে একাউন্ট খুলে নিয়ে সেটি আগে এক্টিভ করুন ।  তারপর এখানে লগিং করতে পারবেন ! </p>
+  <button onclick="window.location.href='https://pay-yourinspireit.github.io'">Back to Home</button>
 </div>
 
+</section>
 
-
-
-
-
-
+    
+    
     <script>
-        function showPopup() {
-            alert("Warning ! Access Denied. ");
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const eyeIcon = document.getElementById("eyeIcon");
+            const type = passwordInput.type === "password" ? "text" : "password";
+            passwordInput.type = type;
+            eyeIcon.classList.toggle("fa-eye");
+            eyeIcon.classList.toggle("fa-eye-slash");
         }
-        
-        
 
+        const users = {
+            "YI_T-39_A12": "A7b3Xy",
+            "Admin": "Ali",
+            "YI_T-39_B34": "K2d9Rm",
+            "YI_T-39_C56": "P8n5Jq",
+            "YI_T-39_D78": "W4r6Fk",
+            "YI_T-39_E90": "T3v2Nz",
+            "YI_T-39_F23": "L1q8Gm",
+            "YI_T-39_G45": "U9c7Hk",
+            "YI_T-39_H67": "J5y3Dx",
+            "YI_T-39_I89": "B6t4Wn",
+            "YI_T-39_J01": "Q2f9Rp"
+        };
+
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const messageElement = document.getElementById("message");
+
+            if (users[username] && users[username] === password) {
+             messageElement.innerText = "Account is noit activated!  ";
+                messageElement.style.display = "block";
+            } else {
+                messageElement.innerText = "Access Denied! ";
+                messageElement.style.display = "block";
+            }
+        }
     </script>
 </body>
-</html>
+    </html>
