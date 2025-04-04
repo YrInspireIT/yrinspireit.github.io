@@ -195,7 +195,7 @@
         /* --- Call to Action Section --- */
         #cta { background: linear-gradient(135deg, var(--accent-color) 0%, #6366f1 100%); color: #fff; text-align: center; padding: 70px 0; }
         #cta h2 { color: #fff; margin-bottom: 15px; }
-        #cta p { color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto 30px auto; }
+        #cta p { color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto 30px auto; font-family: "Anek Bangla", sans-serif; }
         #cta .btn { background-color: #fff; color: var(--accent-color); font-weight: 600; }
         #cta .btn:hover { background-color: #f0f0f0; color: var(--accent-hover); transform: translateY(-3px) scale(1.03); }
 
