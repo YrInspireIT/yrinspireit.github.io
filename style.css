@@ -129,6 +129,9 @@
         .testimonial-location { font-size: 0.9rem; color: var(--text-lighter); margin-bottom: 15px; }
         .stars { color: var(--warning-color); }
         .stars i { margin-right: 2px; }
+      .testimonial-quote{
+           font-family: "Anek Bangla", sans-serif;
+       }
 
         /* --- Motivational Quote Section --- */
         #motivation { background-color: var(--primary-bg); }
