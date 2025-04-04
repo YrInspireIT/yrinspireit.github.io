@@ -118,6 +118,9 @@
 
         /* --- Testimonials Section --- */
         #testimonials { background-color: var(--secondary-bg); }
+        
+        #testimonials p{font-family: "Anek Bangla", sans-serif;}
+       
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .testimonial-card { background-color: var(--tertiary-bg); border: 1px solid var(--border-color); padding: 30px; border-radius: 10px; position: relative; animation: fadeInUp 0.6s ease-out backwards; }
         .testimonial-card:nth-child(1) { animation-delay: 0.3s; }
@@ -151,6 +154,9 @@
              flex-direction: column;
              justify-content: center;
         }
+        
+        
+        
         .quote-icon {
             font-size: 2rem;
             color: var(--accent-color);
