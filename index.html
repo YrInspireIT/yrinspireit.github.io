@@ -30,7 +30,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <nav class="main-nav" id="main-nav">
-                  <a href="https://yrinspireit.github.io/about/" style="color:  #4f46e5;">Home</a>
+                  <a href="https://yrinspireit.github.io/" style="color:  #4f46e5;">Home</a>
                 <a href="https://yrinspireit.github.io/about/">About Us</a>
               <a href="https://YrInspireIT.github.io/contact">Contact Us</a>
                <a href="https://YrInspireIT.github.io/report">Report</a>
@@ -352,7 +352,46 @@
                   button.querySelector('i').classList.remove('fa-chevron-down');
             }
         });
+        
+        
+       
+    // --- প্রয়োজনীয়: কুকি পড়ার ফাংশন ---
+    // এই ফাংশনটি অবশ্যই এই স্ক্রিপ্টের আগে লোড হতে হবে অথবা এর মধ্যেই থাকতে হবে।
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // --- রিডাইরেকশন লজিক ---
+    (function() {
+        const loginCookieName = 'loggedInUser'; // লগইনের সময় যে নামে কুকি সেট করেছিলেন
+        const redirectTargetPage = 'https://YrInspireIT.github.io/sorry';   // লগইন করা থাকলে এই পেজে রিডাইরেক্ট হবে
+
+        const isLoggedIn = getCookie(loginCookieName);
+        const currentPage = window.location.pathname; // বর্তমান পেজের পাথ (e.g., /profile.html)
+
+        // চেক করুন: কুকি আছে কিনা এবং বর্তমান পেজটিই টার্গেট পেজ কিনা (অসীম রিডাইরেক্ট এড়াতে)
+        if (isLoggedIn && isLoggedIn !== '' && currentPage.indexOf(redirectTargetPage) === -1) {
+            console.log(`User '${isLoggedIn}' is logged in. Redirecting from ${currentPage} to ${redirectTargetPage}`);
+            window.location.href = redirectTargetPage;
+        } else {
+            // যদি লগইন করা না থাকে অথবা ইউজার আগে থেকেই sl.html পেজে থাকে, তাহলে কিছু করার দরকার নেই।
+            if (!isLoggedIn || isLoggedIn === '') {
+                 console.log(`User not logged in on ${currentPage}. No redirect.`);
+            } else {
+                 console.log(`User already on ${redirectTargetPage}. No redirect needed.`);
+            }
+        }
+    })(); // ফাংশনটি অবিলম্বে কল করা হচ্ছে (Immediately Invoked Function Expression - IIFE)
+
+
     </script>
 
 </body>
-</html>
+    </html>
