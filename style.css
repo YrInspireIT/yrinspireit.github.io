@@ -24,6 +24,10 @@
             font-size: 16px;
             overflow-x: hidden;
         }
+        
+        
+        
+        
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
         h1, h2, h3 { font-weight: 600; color: var(--text-dark); margin-bottom: 0.8em; }
         h1 { font-size: 2.8rem; line-height: 1.2; }
@@ -352,3 +356,76 @@
              line-height: 1.8;
         }
          .faq-answer li { margin-bottom: 8px; }
+
+
+
+.ucl_head_gamma5 { text-align: center; margin-bottom: 60px;
+ }
+        .ucl_head_gamma5 h2 { margin-bottom: 10px; }
+        .ucl_head_gamma5 p { max-width: 650px; margin: 0 auto; color: var(--text-lighter); }
+
+        /* Obfuscated class for btn */
+        .ucl_call_delta3 { display: inline-block; background-color: var(--accent-color); color: #fff; padding: 12px 28px; border-radius: 8px; font-weight: 500; font-size: 1rem; transition: background-color 0.3s ease, transform 0.2s ease; border: none; cursor: pointer; text-align: center; }
+        .ucl_call_delta3:hover { background-color: var(--accent-hover); transform: translateY(-3px); }
+        /* Assuming btn-secondary would be ucl_call_alt_omega0 if used */
+        /* .ucl_call_alt_omega0 { background-color: var(--secondary-bg); color: var(--accent-color); border: 1px solid var(--accent-color); margin-left: 15px; } */
+        /* .ucl_call_alt_omega0:hover { background-color: var(--primary-bg); color: var(--accent-hover); border-color: var(--accent-hover); } */
+
+        /* --- Services Section Specific Styles --- */
+        /* Obfuscated class for services-grid */
+        .ucl_grid_epsilon1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Obfuscated class for service-card */
+        .ucl_item_zeta8 {
+            background-color: var(--tertiary-bg);
+            padding: 35px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .ucl_item_zeta8:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+
+        /* Obfuscated class for service-icon within service-card */
+        .ucl_item_zeta8 .ucl_glyph_eta6 {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px auto;
+            background-color: var(--accent-color);
+            color: var(--secondary-bg); /* Color of the Font Awesome icon */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem; /* Size of the Font Awesome icon */
+            border-radius: 50%;
+        }
+
+        .ucl_item_zeta8 h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+        }
+
+        .ucl_item_zeta8 p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Obfuscated class for cta-container */
+        .ucl_prompt_theta4 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+       
